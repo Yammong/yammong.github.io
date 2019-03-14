@@ -1,15 +1,15 @@
 # Site settings
-title: Yeongjin's Blog
+title: KYJ
 shortname: Yammong
 email: emaehol28@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Welcome to yeongjin's blog
+  Yammong's personal study blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://yammong.github.io" # the base hostname & protocol for your site
-google_analytics: UA-XXXXXXX-1 #your GA unique id, e.g. UA-xxxxxxxx-x
-author: ""  # Yourname
+google_analytics: UA-136216749-1 #your GA unique id, e.g. UA-xxxxxxxx-x
+author: "Yeongjin Kim"  # Yourname
 github_username: "yammong" #
-repository: rmsubekti/nangka
+repository: Yammong/yammong.github.io
 disqus_shortname:  #Add Disqus comment to your post
 twitter:
   username:  #twitter Username

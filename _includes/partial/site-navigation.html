@@ -4,7 +4,7 @@
     <div class="nav-links">
     {% for page in site.pages %}
     {% if page.navigation %}
-    <a href="{{ '/' | relative_url }}">{{ page.title }}</a>
+    <a href="{{ page.permalink | relative_url }}">{{ page.title }}</a>
     {% endif %}
     {% endfor %}
     <a aria-label = "My github profile page" rel="nofollow" href="https://github.com/{{ site.github_username }}">Github</a>

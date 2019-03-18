@@ -5,7 +5,7 @@ permalink: /about
 navigation: true
 ---
 
-#I am
+# I am
 * #### Growing programmer
 * #### Cooperative programmer
 

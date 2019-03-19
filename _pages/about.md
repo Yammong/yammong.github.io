@@ -30,7 +30,7 @@ navigation: true
   * ##### opencv
 
 # Contact
-* #### emaehol28@gmil.com
+* #### emaehol28@gmail.com
 
 ----
 

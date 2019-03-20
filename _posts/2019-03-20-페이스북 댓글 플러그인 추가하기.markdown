@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "[Blog] 페이스북 댓글 플러그인 추가하기"
+date:   2019-03-20 11:46:00 +0900
+categories: Blog
+---
+
+블로그를 시작하면서 가장 먼저 시작한 일은 Jekyll 테마를 고르는 일이였습니다.
+댓글이나 카테고리가 이것 저것 붙는 부가 기능도 있으면 좋겠고, 블로그는 가독성 좋게 깔끔했으면 좋겠고 이런 저런 조건을 찾다 보니 모든 기능을 만족하는 테마를 고르기가 쉽지 않았습니다.
+이것 저것 고민하는 시간이 너무 길어져서, 어차피 블로그를 작업을 시작한거 귀찮아도 부가 기능들은 내가 구현하고 내가 못하는 깔끔한 디자인을 선택해 부가 기능을 붙이는 작업을 시작했습니다.
+
+---
+
+### Facebook Comment Plugin
+먼저 <a href="https://developers.facebook.com/docs/plugins/comments" target="_blank">Facebook Comments Plugin</a>에 들어갑니다.
+다큐먼트를 보면 역시 페이스북이라는 생각이 듭니다. 굉장히 쉽고 깔끔하게 다큐먼트가 구성되어 있습니다. 
+위 페이지에서 아래로 내려보면 페이스북 댓글 플러그인을 사용하기 위해 필요한 코드를 생성할 수 있게 되어 있습니다.
+입력할 칸이 3개가 있습니다.
+댓글을 남길 url은 댓글 플러그인이 설정될 url 주소를 입력해 주면 됩니다. 저는 각 blog page마다 동적으로 변경될 수 있게 아래에서 작업할 예정입니다. 일단 기본 값으로 설정해 두었습니다.
+너비는 댓글 플러그인의 UI 너비값을 설정해 줍니다. 저는 100%로 주었습니다.
+게시물 수는 한번에 댓글을 몇 개 까지 보여줄 지 설정하는 값입니다.
+<center>
+<img src="images/20190320/FacebookDocCapture.png" alt="FacebookDocCapture" width="100%"/>
+</center>
+위의 값을 입력하고 아래에 '코드 받기' 버튼을 누르면 아래 창이 나타납니다.
+
+<center>
+<img src="images/20190320/FacebookCodeCapture.png" alt="FacebookCodeCapture" width="100%"/>
+</center>
+이제 위에 나타난 코드를 적절한 위치에 북사해 주면 됩니다.
+Step 2 내부에 있는 코드를 복사해 body 태그 아래에 붙여 줍니다.
+저의 경우 `_layouts/default.html` 안에 body 태그가 있어 아래와 같이 추가했습니다.
+```
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#~~~~~"></script>
+```
+
+다음에는 댓글을 달고 싶은 곳에 Step 3의 코드를 복사해 넣어 주면 됩니다.
+안에 값들을 보시면 처음 코드 받기를 누르기 전에 입력한 값들이 적혀 있는 것을 확인할 수 있습니다.
+data-href 값에 새로 생길 포스트의 주소가 들어가도록 수정했습니다.
+```
+<div    class="fb-comments" 
+        data-href="{{ site.url | append: page.url }}" 
+        data-width="100%" 
+        data-numposts="5">
+</div>
+```
+
+위 두 개의 코드를 입력하고 다시 빌드 하면 원하는 곳에 페이스북 댓글 플러그인을 확인할 수 있습니다.
+
+<center>
+<img src="images/20190320/FacebookComment.png" alt="FacebookComment" width="100%"/>
+</center>

@@ -4,7 +4,7 @@ shortname: Yammong
 email: emaehol28@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Yammong's personal study blog
-baseurl: "/_posts" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://yammong.github.io" # the base hostname & protocol for your site
 google_analytics: UA-136216749-1 #your GA unique id, e.g. UA-xxxxxxxx-x
 author: "Yeongjin Kim"  # Yourname

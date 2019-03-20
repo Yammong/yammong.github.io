@@ -20,12 +20,12 @@ categories: Blog
 너비는 댓글 플러그인의 UI 너비값을 설정해 줍니다. 저는 100%로 주었습니다.
 게시물 수는 한번에 댓글을 몇 개 까지 보여줄 지 설정하는 값입니다.
 <center>
-<img src="images/20190320/FacebookDocCapture.png" alt="FacebookDocCapture" width="100%"/>
+<img src='{{ "/images/20190320/FacebookDocCapture.png" | relative_url }}' alt="FacebookDocCapture" width="100%"/>
 </center>
 위의 값을 입력하고 아래에 '코드 받기' 버튼을 누르면 아래 창이 나타납니다.
 
 <center>
-<img src="images/20190320/FacebookCodeCapture.png" alt="FacebookCodeCapture" width="100%"/>
+<img src='{{ "/images/20190320/FacebookCodeCapture.png" | relative_url }}' alt="FacebookCodeCapture" width="100%"/>
 </center>
 이제 위에 나타난 코드를 적절한 위치에 북사해 주면 됩니다.
 Step 2 내부에 있는 코드를 복사해 body 태그 아래에 붙여 줍니다.
@@ -43,7 +43,7 @@ Step 2 내부에 있는 코드를 복사해 body 태그 아래에 붙여 줍니�
 data-href 값에 새로 생길 포스트의 주소가 들어가도록 수정했습니다.
 {% highlight html %}
 <div    class="fb-comments" 
-        data-href="{{ site.url | append: page.url }}" 
+        data-href='"{{ site.url | append: page.url }}"'
         data-width="100%" 
         data-numposts="5">
 </div>
@@ -52,5 +52,5 @@ data-href 값에 새로 생길 포스트의 주소가 들어가도록 수정했�
 위 두 개의 코드를 입력하고 다시 빌드 하면 원하는 곳에 페이스북 댓글 플러그인을 확인할 수 있습니다.
 
 <center>
-<img src="images/20190320/FacebookComment.png" alt="FacebookComment" width="100%"/>
+<img src='{{ "/images/20190320/FacebookComment.png" | relative_url }}' alt="FacebookComment" width="100%"/>
 </center>

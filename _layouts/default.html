@@ -2,6 +2,9 @@
 <html>
   {% include head.html %}
   <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2&appId=386106271974423&autoLogAppEvents=1"></script>
+
     <div class="wrapper{% if page.layout%} {{ page.layout }}{% endif %}">
       {% include header.html %}
       <main class="content">

@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "[Blog][Jekyll][Github io] 구글 검색 노출 시키기"
+date:   2019-04-03 00:19:00 +0900
+categories: Blog, Jekyll, GithubIO
+---
+
+처음 Github io에 여러 글을 작성했는데 검색엔진에 노출되지 않아 블로그가 아무도 보지 않는 일기장이 되어버렸습니다. 구글에 제가 쓴 글을 노출시키기 위해 필요한 여러 정보를 찾아보면서 공부한 내용을 정리했습니다.
+
+---
+
+### 구글 검색 원리
+구글에서는 검색 서비스를 위해 아래와 같은 작업을 진행하고 있습니다.
+1. 웹 크롤러를 이용해 공개된 웹 페이지 검색
+2. 찾은 웹 페이지의 콘텐츠 렌더링 및 색인 생성
+3. 검색어와 색인을 이용해 결과 제공
+
+(더 자세한 정보는 <a href="https://www.google.com/intl/ko/search/howsearchworks/" target="_blank">구글 검색 원리</a> 페이지에서 확인할 수 있습니다.)
+
+구글에 제 블로그를 노출시키기 위해서는 구글 웹 크롤러가 제 사이트를 크롤링 할 수 있게 작업을 해주어야만 했습니다.
+
+---
+
+### Google Search Console에 사이트 등록
+1. Google Search Console 에 접속합니다.
+2. 속성 추가를 누릅니다.
+3. Github io 주소를 입력하고 계속을 누릅니다<img src="/assets/postImages/20190403/GoogleConsole_속성_유형_확인.png" alt="GoogleConsole_속성_유형_확인" width="100%"/>
+4. 해당 페이지의 소유권을 확인하는 절차를 진행합니다. 제공하는 html을 다운받고, 다운 받은 파일을 githb io.root 경로에 업로드 합니다.<img src="/assets/postImages/20190403/GoogleConsole_소유권확인_방법.png" alt="GoogleConsole_소유권확인_방법" width="100%"/>
+5. 정상적으로 업로드 되었다면 소유권이 확인되었다는 창을 볼 수 있습니다.<img src="/assets/postImages/20190403/GoogleConsole_소유권확인_완료.png" alt="GoogleConsole_소유권확인_완료" width="100%"/>
+
+### sitemap.xml 생성
+> sitemap.xml은 나의 사이트에 있는 페이지들이 어떤 구조로 되어 있는지를 웹 크롤러에게 전달해 주는 역할을 합니다. 
+
+1. _config.yml 파일에 url 속성에 자기의 블로그 이름이 들어가 있는지 확인합니다.
+2. sitemap.xml 파일을 자기 github.io root 경로에 생성합니다.
+3. 아래 내용을 site.xml에 추가합니다.
+    {% raw %}
+    ---
+    layout: null
+    sitemap:
+      exclude: 'yes'
+    ---
+    <?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      {% for post in site.posts %}
+        {% unless post.published == false %}
+        <url>
+          <loc>{{ site.url }}{{ post.url }}</loc>
+          {% if post.sitemap.lastmod %}
+            <lastmod>{{ post.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+          {% elsif post.date %}
+            <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+          {% else %}
+            <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+          {% endif %}
+          {% if post.sitemap.changefreq %}
+            <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+          {% else %}
+            <changefreq>monthly</changefreq>
+          {% endif %}
+          {% if post.sitemap.priority %}
+            <priority>{{ post.sitemap.priority }}</priority>
+          {% else %}
+            <priority>0.5</priority>
+          {% endif %}
+        </url>
+        {% endunless %}
+      {% endfor %}
+    </urlset>
+    {% endraw %}
+
+### robots.txt 생성
+
+### Google Search Console 에 sitemap 제출

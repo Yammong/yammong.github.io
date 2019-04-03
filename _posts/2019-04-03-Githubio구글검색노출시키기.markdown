@@ -75,15 +75,6 @@ categories: Blog, Jekyll, GithubIO
 ### robots.txt 생성
 > robots.txt는 웹 크롤러가 내 사이트의 정보를 크롤링 하려고 할 때 크롤링 할 정책을 결정해주기 위한 파일입니다. 참고하지 않았으면 하는 파일들과 참고했으면 하는 파일들을 설정해 주면 웹 크롤러가 해당 내용을 확인하고 내가 설정한 파일들만 참고합니다.
 
-
-{% highlight %}
-{% raw %}
-User-agent: *
-Allow: /
-Sitemap: {{ '/sitemap.xml' | relative_url | prepend: site.url }}
-{% endraw %}
-{% end highlight %}
-
 1. github.io root 경로에 robots.txt 파일을 생성합니다.
 2. 아래 내용을 robots.txt 파일에 작성합니다.
     {% highlight %}

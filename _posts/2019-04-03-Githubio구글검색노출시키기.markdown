@@ -24,9 +24,9 @@ categories: Blog, Jekyll, GithubIO
 ### Google Search Console에 사이트 등록
 1. Google Search Console 에 접속합니다.
 2. 속성 추가를 누릅니다.
-3. Github io 주소를 입력하고 계속을 누릅니다<img src="/assets/postImages/20190403/GoogleConsole_속성_유형_확인.png" alt="GoogleConsole_속성_유형_확인" width="100%"/>
-4. 해당 페이지의 소유권을 확인하는 절차를 진행합니다. 제공하는 html을 다운받고, 다운 받은 파일을 githb io.root 경로에 업로드 합니다.<img src="/assets/postImages/20190403/GoogleConsole_소유권확인_방법.png" alt="GoogleConsole_소유권확인_방법" width="100%"/>
-5. 정상적으로 업로드 되었다면 소유권이 확인되었다는 창을 볼 수 있습니다.<img src="/assets/postImages/20190403/GoogleConsole_소유권확인_완료.png" alt="GoogleConsole_소유권확인_완료" width="100%"/>
+3. Github io 주소를 입력하고 계속을 누릅니다<img src="/assets/postImages/20190403/GoogleConsoleCheckConfig.png" alt="GoogleConsole 속성 유형 확인" width="100%"/>
+4. 해당 페이지의 소유권을 확인하는 절차를 진행합니다. 제공하는 html을 다운받고, 다운 받은 파일을 githb io.root 경로에 업로드 합니다.<img src="/assets/postImages/20190403/GoogleConsoleHowToCheckOwnership.png" alt="GoogleConsole 소유권 확인 방법" width="100%"/>
+5. 정상적으로 업로드 되었다면 소유권이 확인되었다는 창을 볼 수 있습니다.<img src="/assets/postImages/20190403/GoogleConsoleConfirmDone.png" alt="GoogleConsole 소유권 확인" width="100%"/>
 
 ### sitemap.xml 생성
 > sitemap.xml은 나의 사이트에 있는 페이지들이 어떤 구조로 되어 있는지를 웹 크롤러에게 전달해 주는 역할을 합니다. 

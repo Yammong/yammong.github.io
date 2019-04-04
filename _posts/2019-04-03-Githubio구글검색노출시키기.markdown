@@ -94,3 +94,18 @@ categories: Blog, Jekyll, GithubIO
 2. 본인의 github.io 속성을 선택하고, 왼쪽 메뉴에 색인 > Sitemaps 에 들어갑니다.
 3. 새 사이트멥 추가에 sitemap.xml을 입력하고 제출합니다.<img src="/assets/postImages/20190403/GoogleConsoleSitemapInput.png" alt="GoogleConsole Sitemap Input" width="100%"/>
 4. 제출이 완료되면 아래 같이 뜨며, 추가 된 url을 확인할 수 있습니다.<img src="/assets/postImages/20190403/GoogleConsoleSitemapCheck.png" alt="GoogleConsole Sitemap Check" width="100%"/>
+
+### 구글에서 사이트 검색
+위의 과정이 완료되었다면 사이트가 구글 검색에 노출되는지 확인 해야 합니다.
+검색어에 `site:[사이트이름]` 을 넣어 검색합니다.
+<img src="/assets/postImages/20190403/GoogleConsoleSearchWord.png" alt="Google Console Search" width="100%"/>
+
+
+### 몇 일 동안 검색어에 노출되지 않는다면 URL검사
+위 작업을 진행했는데, 2~3일 지나도 검색어에 노출이 되지 않아 직접 URL 검사를 진행했습니다. Google Search Console에 접속해 포스트한 URL을 검사했습니다.
+<img src="/assets/postImages/20190403/GoogleConsoleURLCheck.png" alt="Google Console URL Check" width="100%"/>
+처음 검사시에는 등록되어 있지 않아 색인 요청을 진행했습니다. 정상적으로 완료된 경우 아래 처럼 URL을 등록할 수 있는 상태라고 나타납니다.
+<img src="/assets/postImages/20190403/GoogleConsoleURLCheckResult.png" alt="Google Console URL Check Result" width="100%"/>
+위 작업을 진행한 날 오후에 구글 검색에 노출되는 것을 확인했습니다.
+구글에 URL이 등록된 이후에 URL 검사를 하면 아래와 같이 변경되서 보이는 것을 확인할 수 있습니다.
+<img src="/assets/postImages/20190403/GoogleConsoleURLCheckConfirmed.png" alt="Google Console URL Check Confirmed" width="100%"/>

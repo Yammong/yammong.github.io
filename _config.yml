@@ -59,3 +59,5 @@ exclude:
 
 paginate: 10
 paginate_path: '/blog/:num/'
+
+theme: jekyll-theme-minimal
